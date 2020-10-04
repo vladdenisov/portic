@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "short_name": "client",
+  "name": "Portic",
+  "short_name": "Portic",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

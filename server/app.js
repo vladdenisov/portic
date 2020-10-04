@@ -23,7 +23,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(mongoose());
 app.use(cors())
-app.use(helmet())
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static(path.join(`${__dirname  }../../client/build`)));

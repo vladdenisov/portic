@@ -5,10 +5,11 @@
   "main": "index.js",
   "private": "true",
   "scripts": {
-    "build": "preact build",
+    "build": "preact build --no-prerender --src ./client/src --babelConfig ./client/.babelrc --dest ./client/build",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "cd client && preact watch",
-    "lint": "eslint src",
+    "server" : "node server/bin/www",
+    "lint": "eslint .",
     "test": "jest"
   },
   "keywords": [
@@ -49,7 +50,7 @@
     "eslint-config-preact": "^1.1.0",
     "jest": "^24.9.0",
     "jest-preset-preact": "^1.0.0",
-    "preact-cli": "^3.0.0",
+    "preact-cli": "^3.0.3",
     "sirv-cli": "1.0.3"
   }
 }

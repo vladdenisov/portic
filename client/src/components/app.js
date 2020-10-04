@@ -1,13 +1,12 @@
 import { h } from 'preact';
-// import { Router } from 'preact-router';
 import Footer from './footer';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-
+import style from '../style/index.css'
 import Home from '../routes/home';
 import Snippet from '../routes/snippet'
 
 const App = () => (
-	<div id="app">
+	<div id="app" className={style.app}>
 		<BrowserRouter>
 			<Switch>
 				<Route path='/' exact component={Home} key={Math.random().toString(36).substring(7)} />
