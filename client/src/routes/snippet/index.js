@@ -20,6 +20,7 @@ const Snippet = () => {
       }).then((res) => res.json());
       console.log(snippet);
       if (snippet.encrypted) {
+        setContent("Enter key to decrypt!")
         let key = prompt("Enter Key to decrypt:");
         console.log(AES.encrypt(snippet.content, key).toString());
         setContent(AES.decrypt(snippet.content, key).toString(enc.Utf8));
@@ -28,7 +29,6 @@ const Snippet = () => {
     fetchData();
   }, []);
   const generateContent = () => {
-    if (content === null) return "Enter password";
     if (content === "")
       return "Nothing here, maybe you entered wrong password";
     return content
