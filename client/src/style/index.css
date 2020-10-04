@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #FAFAFA;
+	font-family: 'Fira Code', monospace;
+	font-weight: 400;
+	color: #444;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#app {
+	height: 100%;
+	background: #000;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 5vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0 10px;
+	color: white;
+	background: black;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	z-index: 50;
+}
+.btn {
+	cursor: pointer;
+	color: white;
+	text-decoration: none;
+}
+.keybindings { 
+	margin: auto;
+	justify-self: flex-start;
+}
+.contols {
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.contols * {
+	margin: auto;
+}
+.contols input {
+	margin-left: 50px;
+}
+.contols label {
+	margin-left: 10px;
+	cursor: pointer;
+}
+.snippet-editor {
+	background-color: black;
+	border: none;
+	margin: auto;
+	font-family: 'Fira Code', monospace;
+	resize: none;
+	overflow-y: auto;
+	padding: 15px;
+	min-height: 100%;
+	font-size: 16px;
+	font-weight: normal;
+	width: 100%;
+	color: white;
+}
+#encrypt {
+	cursor: pointer;
+}
+#key {
+	background: transparent;
+	color: white;
+	border: none;
+	font-size: 16px;
+	border-bottom: 2px solid white;
+}
+#key:focus {
+	outline: none;
+}
+.snippet-main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 95vh;
+}
+a { text-decoration: none;}
