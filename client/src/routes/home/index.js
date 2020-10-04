@@ -1,16 +1,16 @@
-import { h } from "preact"
-import { useEffect, useState } from "preact/hooks"
-import {useLocation, useHistory } from "react-router-dom"
+import { h } from 'preact'
+import { useEffect, useState } from 'preact/hooks'
+import {useLocation, useHistory } from 'react-router-dom'
 const Home = () => {
   // useKeybingings()
   const {state} = useLocation()
-  const [content] = useState(state ? state.content : "")
+  const [content] = useState(state ? state.content : '')
   const history = useHistory()
   useEffect(() => {
     document
-      .querySelector("textarea")
-      .addEventListener("keydown", function (e) {
-        if (e.key === "Tab") {
+      .querySelector('textarea')
+      .addEventListener('keydown', function (e) {
+        if (e.key === 'Tab') {
           e.preventDefault()
           // tab was pressed
           // get caret position/selection

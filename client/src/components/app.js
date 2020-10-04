@@ -1,9 +1,9 @@
-import { h } from "preact"
-import Footer from "./footer"
-import { BrowserRouter, Switch, Route } from "react-router-dom"
-import style from "../style/index.css"
-import Home from "../routes/home"
-import Snippet from "../routes/snippet"
+import { h } from 'preact'
+import Footer from './footer'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import style from '../style/index.css'
+import Home from '../routes/home'
+import Snippet from '../routes/snippet'
 
 const App = () => {
   return (

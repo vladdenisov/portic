@@ -10,6 +10,7 @@
     "dev": "cd client && preact watch",
     "server" : "node server/bin/www",
     "lint": "eslint .",
+    "lint:fix": "eslint \"{,!(node_modules)/**/}*.{js,jsx}\" --fix",
     "test": "jest"
   },
   "keywords": [
@@ -38,7 +39,11 @@
     "extends": "preact",
     "ignorePatterns": [
       "build/"
-    ]
+    ],
+    "rules": {
+      "quotes": [2, "single"],
+      "semi": [2, "never"]
+    }
   },
   "author": "Vlad Denisov",
   "license": "MIT",
