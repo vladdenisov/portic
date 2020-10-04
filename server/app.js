@@ -24,12 +24,11 @@ app.use(cookieParser());
 app.use(mongoose());
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(express.static(path.join(`${__dirname  }../../client/build`)));
 app.use('/api', apiRouter);
-app.get('/', (req, res) => {
-  res.sendFile(path.join(`${__dirname  }../../client/build/index.html`));
-})
+app.get('*', (request, response) => {
+  response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+ });
 
 
 // catch 404 and forward to error handler
