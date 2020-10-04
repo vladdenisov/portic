@@ -97,7 +97,7 @@ body {
   margin-left: 10px;
   cursor: pointer;
 }
-.snippet-editor {
+.snippet {
   background-color: black;
   border: none;
   margin: auto;
@@ -111,7 +111,7 @@ body {
   width: 100%;
   color: white;
 }
-.snippet-editor:focus {
+.snippet:focus {
   outline: none;
 }
 #encrypt {

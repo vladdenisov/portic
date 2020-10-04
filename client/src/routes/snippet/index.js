@@ -1,11 +1,12 @@
-import { h } from "preact";
-import { useLayoutEffect, useState } from "preact/hooks";
-import { useParams } from "react-router-dom";
-import { AES, enc } from "crypto-js";
+import { h } from "preact"
+import { useLayoutEffect, useState } from "preact/hooks"
+import { useParams } from "react-router-dom"
+import { AES, enc } from "crypto-js"
 
 const Snippet = () => {
-  let { id } = useParams();
-  const [content, setContent] = useState(null);
+  // useKeybingings()
+  let { id } = useParams()
+  const [content, setContent] = useState(null)
   useLayoutEffect(() => {
     const fetchData = async () => {
       const snippet = await fetch(`http://localhost:3000/api/get`, {
@@ -17,27 +18,26 @@ const Snippet = () => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-      }).then((res) => res.json());
-      console.log(snippet);
+      }).then((res) => res.json())
       if (snippet.encrypted) {
         setContent("Enter key to decrypt!")
-        let key = prompt("Enter Key to decrypt:");
-        console.log(AES.encrypt(snippet.content, key).toString());
-        setContent(AES.decrypt(snippet.content, key).toString(enc.Utf8));
-      } else setContent(snippet.content);
-    };
-    fetchData();
-  }, []);
+        let key = prompt("Enter Key to decrypt:")
+        setContent(AES.decrypt(snippet.content, key).toString(enc.Utf8))
+      } else setContent(snippet.content)
+    }
+    fetchData()
+  }, [id])
   const generateContent = () => {
-    if (content === "")
-      return "Nothing here, maybe you entered wrong password";
+    if (content === "") return "Nothing here, maybe you entered wrong password"
     return content
   }
   return (
     <div className="snippet-main">
-      <textarea readonly className='snippet-editor'>{generateContent()}</textarea>
+      <textarea readonly className="snippet">
+        {generateContent()}
+      </textarea>
     </div>
-  );
-};
+  )
+}
 
-export default Snippet;
+export default Snippet
