@@ -8,7 +8,7 @@ const Snippet = () => {
   const [content, setContent] = useState(null)
   useLayoutEffect(() => {
     const fetchData = async () => {
-      const snippet = await fetch(`http://${window.location.hostname}:3000/api/get`, {
+      const snippet = await fetch(`http://${window.location.hostname}/api/get`, {
         method: 'POST',
         body: JSON.stringify({
           id,
