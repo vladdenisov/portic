@@ -1,6 +1,6 @@
 # Crove Bot ![GitHub last commit](https://img.shields.io/github/last-commit/vladdenisov/portic) ![GitHub repo size](https://img.shields.io/github/repo-size/vladdenisov/portic) ![GitHub](https://img.shields.io/github/license/vladdenisov/portic) 
 
-A lightweight pastebin/hastebin alternative built using Preact. Ispired by [Memochō](https://github.com/mojurasu/memocho).
+A lightweight pastebin/hastebin alternative built using Preact. Has ability to encrypt text with AES encryption. Ispired by [Memochō](https://github.com/mojurasu/memocho).
 
 ## Getting Started
 
