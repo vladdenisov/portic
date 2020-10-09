@@ -23,14 +23,12 @@ const Footer = () => {
   const history = useHistory()
   const handleSave = () => {
     const saveSnippet = async () => {
-      console.log('saving')
       let content = document.querySelector('textarea').value
       const encrypted = document.getElementById('encrypt').checked
       let key = encrypted ? document.getElementById('key').value : ''
       if (!content) return
       if (encrypted) {
         content = AES.encrypt(content, key).toString()
-        alert(key)
       }
       const snippet = await fetch(
         '/api/create',

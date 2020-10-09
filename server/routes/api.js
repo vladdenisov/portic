@@ -10,7 +10,6 @@ router.get('/log', (req, res) => {
 })
 router.post('/create', (req,res) => {
   const content = req.body.content
-  console.log(req.body)
   const encrypted = req.body.encrypted
   if (!content) return res.redirect('/')
     req.models.snippets.create({content, encrypted})
@@ -21,7 +20,6 @@ router.post('/create', (req,res) => {
 router.post('/get', (req, res) => {
   const {models, mongoose} = req
   const id = req.body.id
-  console.log(req.body)
   return models.snippets.findOne({_id: mongoose.Types.ObjectId(id)})
       .then(doc => {
           if (!doc) {
