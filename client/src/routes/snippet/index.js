@@ -1,15 +1,14 @@
-import { h, Fragment } from 'preact'
+import { h } from 'preact'
 import { useLayoutEffect, useState } from 'preact/hooks'
 import { useParams } from 'react-router-dom'
 import { AES, enc } from 'crypto-js'
-import Prism from 'prismjs'
 const Snippet = () => {
   // useKeybingings()
   let { id } = useParams()
   const [content, setContent] = useState(null)
   useLayoutEffect(() => {
     const fetchData = async () => {
-      const snippet = await fetch('http://localhost:3000/api/get', {
+      const snippet = await fetch(`http://${window.location.hostname}:3000/api/get`, {
         method: 'POST',
         body: JSON.stringify({
           id,
