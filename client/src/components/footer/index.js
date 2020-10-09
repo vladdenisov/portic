@@ -56,15 +56,14 @@ const Footer = () => {
 	}, [loc.pathname])
 	return (
 	<footer className='footer' class={style.footer}> 
-		<div className="contols">
+		<div className="controls">
 			<div className="keybindings">
-				<Link to='/'><span className='btn new-btn'>New snippet: Ctrl + Alt + A</span></Link>
+				<Link to='/'><span className='btn new-btn'>New snippet<span className='keybinding-text'>: Ctrl + Alt + A</span></span></Link>
 				<span> &gt; </span>
-				{loc.pathname === '/' ? <span className='btn save-btn' id='save-btn' onClick={() => handleSave()}>Save: Ctrl + S</span> : ''}
-				{loc.pathname !== '/' ? <span className='btn fork-btn' id='fork-btn' onClick={() => handleFork()}>Fork: Ctrl + Alt + F</span> : ''}
+				{loc.pathname === '/' ? <span className='btn save-btn' id='save-btn' onClick={() => handleSave()}>Save<span className='keybinding-text'>: Ctrl + S</span></span> : ''}
+				{loc.pathname !== '/' ? <span className='btn fork-btn' id='fork-btn' onClick={() => handleFork()}>Fork<span className='keybinding-text'>: Ctrl + Alt + F</span></span> : ''}
 			</div>
-			{loc.pathname === '/' ? (<div><input id='encrypt' type='checkbox' className='encrypt-checkbox' /> <label for='encrypt'>Encrypt</label> </div>) : ''}
-			{loc.pathname === '/' && encrypt ? <input type='text' id='key' defaultValue={randomString(20)} /> : ''}
+			{loc.pathname === '/' ? (<div className="encrypt-div"><input id='encrypt' type='checkbox' className='encrypt-checkbox' /> <label className='encrypt-label' for='encrypt'>Encrypt</label>{loc.pathname === '/' && encrypt ? <input type='text' id='key' defaultValue={randomString(20)} /> : ''} </div>) : ''}
 		</div>
 	</footer>
 )}
