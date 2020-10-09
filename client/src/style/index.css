@@ -156,8 +156,11 @@ td {
   .keybinding-text {
       display: none;
   }
+  .snippet-main {
+    height: 90vh;
+  }
   .footer {
-    height: 80px;
+    height: 10vh;
   }
   .controls {
     display: flex;
