@@ -33,7 +33,7 @@ const Footer = () => {
         alert(key)
       }
       const snippet = await fetch(
-        `http://${window.location.hostname}/api/create`,
+        '/api/create',
         {
           method: 'POST',
           body: JSON.stringify({
