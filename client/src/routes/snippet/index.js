@@ -1,8 +1,8 @@
-import { h } from 'preact'
+import { h, Fragment } from 'preact'
 import { useLayoutEffect, useState } from 'preact/hooks'
 import { useParams } from 'react-router-dom'
 import { AES, enc } from 'crypto-js'
-
+import Prism from 'prismjs'
 const Snippet = () => {
   // useKeybingings()
   let { id } = useParams()
@@ -29,13 +29,20 @@ const Snippet = () => {
   }, [id])
   const generateContent = () => {
     if (content === '') return 'Nothing here, maybe you entered wrong password'
-    return content
+    if (content) {
+      let lines = content.split('\n')
+      console.log(lines)
+      let html = []
+      lines.map((e, i) => {
+      html.push(<tr><td className="line-number">{i}.</td><td className='line-text'>{e}</td></tr>)
+      })
+      return html
+    }
+    
   }
   return (
     <div className="snippet-main">
-      <textarea readonly className="snippet">
-        {generateContent()}
-      </textarea>
+      <code className="snippet"><table><tbody>{generateContent()}</tbody></table></code>
     </div>
   )
 }

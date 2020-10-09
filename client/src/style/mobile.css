@@ -1,0 +1,5 @@
+@media only screen and (max-width : 420px) {
+    .new-btn {
+        content: "New Snippet";
+    }
+}

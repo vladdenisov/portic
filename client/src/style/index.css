@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+@import './mobile.css';
 html,
 body {
   height: 100%;
@@ -80,20 +81,20 @@ body {
   margin: auto;
   justify-self: flex-start;
 }
-.contols {
+.controls {
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.contols * {
+.controls * {
   margin: auto;
 }
-.contols input {
+.controls input {
   margin-left: 50px;
 }
-.contols label {
+.controls label {
   margin-left: 10px;
   cursor: pointer;
 }
@@ -137,3 +138,45 @@ body {
 a {
   text-decoration: none;
 }
+.line-text {
+  padding-left: 10px;
+}
+td {
+  white-space: pre;
+  margin-top: 0px;
+  margin: 0;
+  padding: 0;
+}
+.line-number {
+  user-select: none;
+}
+
+
+@media only screen and (max-width : 420px) {
+  .keybinding-text {
+      display: none;
+  }
+  .footer {
+    height: 80px;
+  }
+  .controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .controls * {
+    margin: auto;
+  }
+  #encrypt {
+    margin: auto;
+  }
+  .encrypt-div {
+    margin-top: 5px;
+  }
+  #key {
+    margin-left: 10px;
+  }
+}
+  
