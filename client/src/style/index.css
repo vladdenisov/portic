@@ -152,7 +152,7 @@ td {
 }
 
 
-@media only screen and (max-width : 420px) {
+@media only screen and (max-width : 768px) {
   .keybinding-text {
       display: none;
   }
@@ -160,7 +160,7 @@ td {
     height: 90vh;
   }
   .footer {
-    height: 10vh;
+    height: 12vh;
   }
   .controls {
     display: flex;
@@ -176,7 +176,8 @@ td {
     margin: auto;
   }
   .encrypt-div {
-    margin-top: 5px;
+    margin-top: 1vh;
+    display: flex;
   }
   #key {
     margin-left: 10px;
